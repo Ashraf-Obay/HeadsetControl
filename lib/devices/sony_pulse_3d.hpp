@@ -133,7 +133,7 @@ private:
     void remember(hid_device* device_handle, std::span<const uint8_t> report) const
     {
         // Other collections on the same interface (media keys) use other report IDs
-        if (report.size() < REPORT_SIZE || report[0] != STATUS_REPORT_ID)
+        if (report.size() < REPORT_SIZE)
             return;
 
         auto& status        = last_status_[device_handle];
